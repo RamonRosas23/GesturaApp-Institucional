@@ -1,12 +1,9 @@
-# GesturaApp - Intérprete de Lenguaje de Señas# GesturaApp - Intérprete de Lenguaje de Señas
-
-
 
 **GesturaApp** es una aplicación innovadora diseñada para interpretar el lenguaje de señas en tiempo real utilizando una cámara **Ultra Leap** y **MediaPipe**. La aplicación recopila las posiciones de las articulaciones de las manos y, mediante el uso de redes neuronales profundas, predice las señas realizadas por el usuario. El objetivo es proporcionar una herramienta eficiente y precisa para facilitar la comunicación entre personas con discapacidad auditiva y quienes no dominan el lenguaje de señas.**GesturaApp** es una aplicación innovadora diseñada para interpretar el lenguaje de señas en tiempo real utilizando una cámara **Ultra Leap** y **MediaPipe**. La aplicación recopila las posiciones de las articulaciones de las manos y, mediante el uso de redes neuronales profundas, predice las señas realizadas por el usuario. El objetivo es proporcionar una herramienta eficiente y precisa para facilitar la comunicación entre personas con discapacidad auditiva y quienes no dominan el lenguaje de señas.
 
 
 
-## 🚀 Instalación Rápida## 🚀 Instalación Rápida
+##  Instalación Rápida##  Instalación Rápida
 
 
 
@@ -56,11 +53,11 @@ pip install -e leapc-python-apipip install -e leapc-python-api
 
 
 
-## ⚙️ Configuración Completa del Sistema## ✅ Verificar Instalación
+##  Configuración Completa del Sistema##  Verificar Instalación
 
 ```bash
 
-### 1. 📋 Requisitos del Sistema Previos# Verificar que todo está instalado correctamente
+### 1.  Requisitos del Sistema Previos# Verificar que todo está instalado correctamente
 
 Antes de instalar GesturaApp, asegúrate de tener:.\verify_install.ps1
 
@@ -68,7 +65,7 @@ Antes de instalar GesturaApp, asegúrate de tener:.\verify_install.ps1
 
 #### **Software Base:**
 
-- **Windows 10/11** (64-bit)## 🎯 Ejecutar la Aplicación
+- **Windows 10/11** (64-bit)##  Ejecutar la Aplicación
 
 - **Python 3.8-3.11** - [Descargar](https://www.python.org/downloads/)```bash
 
@@ -88,9 +85,9 @@ Antes de instalar GesturaApp, asegúrate de tener:.\verify_install.ps1
 
 - **Mínimo 8GB RAM** (para modelos de ML)
 
-## 🛠️ Funcionalidades principales:
+##  Funcionalidades principales:
 
-### 2. 🗄️ Configuración de Base de Datos- **Captura Ultra Leap**: Captura en tiempo real de las posiciones de las articulaciones de las manos.
+### 2.  Configuración de Base de Datos- **Captura Ultra Leap**: Captura en tiempo real de las posiciones de las articulaciones de las manos.
 
 - **Reconocimiento MediaPipe**: Detección adicional usando MediaPipe para mayor precisión.
 
@@ -106,7 +103,7 @@ Antes de instalar GesturaApp, asegúrate de tener:.\verify_install.ps1
 
    - **Método de autenticación:** Use Strong Password Encryption
 
-## 🔧 Tecnologías utilizadas:
+##  Tecnologías utilizadas:
 
 #### **Paso 2: Crear Base de Datos**- **Python 3.8+**: Lenguaje principal del proyecto
 
@@ -126,13 +123,13 @@ CREATE DATABASE login_app CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;- **O
 
 - **Flask**: Servidor web para autenticación
 
-### 3. 🔐 Configuración de Variables de Entorno- **Google Cloud**: Speech-to-Text y Gemini AI
+### 3.  Configuración de Variables de Entorno- **Google Cloud**: Speech-to-Text y Gemini AI
 
 - **Pandas/NumPy**: Procesamiento de datos
 
 #### **Paso 1: Crear archivo .env**
 
-```bash## 📋 Requisitos del Sistema:
+```bash##  Requisitos del Sistema:
 
 # Copiar el archivo de ejemplo- Windows 10/11
 
@@ -148,7 +145,7 @@ Edita el archivo `.env` con tus valores reales:- Micrófono (para transcripción
 
 
 
-```bash## 🧪 Ejecutar Ejemplos:
+```bash##  Ejecutar Ejemplos:
 
 # ==============================================```bash
 
@@ -166,7 +163,7 @@ DB_NAME=login_app```
 
 DB_PORT=3306
 
-## 📂 Estructura del Proyecto:
+##  Estructura del Proyecto:
 
 # ==============================================```
 
@@ -182,7 +179,7 @@ SECRET_KEY=tu_clave_secreta_muy_larga_y_aleatoria_de_64_caracteres_minimo│   �
 
 ├── Login/               # Sistema de autenticación
 
-### 4. 🎤 Configuración de Speech-to-Text (Google Cloud)│   ├── Login.py        # Interfaz de login
+### 4.  Configuración de Speech-to-Text (Google Cloud)│   ├── Login.py        # Interfaz de login
 
 │   └── servidor_flask.py # Servidor de autenticación
 
@@ -206,7 +203,7 @@ SECRET_KEY=tu_clave_secreta_muy_larga_y_aleatoria_de_64_caracteres_minimo│   �
 
    - **Rol:** Cloud Speech Client
 
-3. Crear clave JSON y descargar## 🔐 Configuración del Entorno:
+3. Crear clave JSON y descargar##  Configuración del Entorno:
 
 
 
@@ -228,7 +225,7 @@ GOOGLE_APPLICATION_CREDENTIALS=credentials/google-cloud-speech.jsonnotepad .env
 
 
 
-### 5. 🤖 Configuración de IA (Google Gemini)### 2. Variables importantes a configurar:
+### 5.  Configuración de IA (Google Gemini)### 2. Variables importantes a configurar:
 
 ```bash
 
@@ -248,7 +245,7 @@ GOOGLE_GEMINI_API_KEY=tu_gemini_api_key_aqui
 
 GOOGLE_CLIENT_ID=tu_google_client_id
 
-### 6. 🔐 Configuración de Autenticación OAuthGOOGLE_CLIENT_SECRET=tu_google_client_secret
+### 6.  Configuración de Autenticación OAuthGOOGLE_CLIENT_SECRET=tu_google_client_secret
 
 OPENAI_API_KEY=tu_openai_api_key
 
@@ -280,7 +277,7 @@ GOOGLE_CLIENT_SECRET=tu_google_client_secret- **Google OAuth**: https://console.
 
 #### **Facebook OAuth (Opcional):**
 
-1. Ir a [Facebook Developers](https://developers.facebook.com/)## 🎯 Uso de la Aplicación:
+1. Ir a [Facebook Developers](https://developers.facebook.com/)##  Uso de la Aplicación:
 
 2. Crear aplicación Facebook1. **Conecta** la cámara Ultra Leap a tu computadora
 
@@ -296,13 +293,13 @@ FACEBOOK_APP_ID=tu_facebook_app_id6. **Usa** la transcripción de voz para coman
 
 FACEBOOK_APP_SECRET=tu_facebook_app_secret
 
-```## 🤝 Contribuir:
+```##  Contribuir:
 
 GesturaApp es un proyecto de inclusión tecnológica. Las contribuciones son bienvenidas para mejorar la precisión del reconocimiento y agregar nuevas funcionalidades.
 
-### 7. 💳 Configuración de Pagos (Stripe)
+### 7.  Configuración de Pagos (Stripe)
 
-## 📄 Licencia:
+##  Licencia:
 
 #### **Para funcionalidad de pagos:**Consulta el archivo `LICENSE.md` para más detalles.
 
@@ -320,7 +317,7 @@ STRIPE_SECRET_KEY=sk_test_tu_stripe_secret_key
 STRIPE_PRODUCT_ID=prod_tu_producto_id
 ```
 
-### 8. 📧 Configuración de Email (Gmail)
+### 8.  Configuración de Email (Gmail)
 
 #### **Para envío de emails:**
 1. Habilitar autenticación de 2 factores en Gmail
@@ -332,13 +329,13 @@ EMAIL_USER=tu_email@gmail.com
 EMAIL_PASSWORD=tu_app_password_gmail_de_16_caracteres
 ```
 
-## ✅ Verificar Instalación
+##  Verificar Instalación
 ```powershell
 # Verificar que todo está instalado correctamente
 .\verify_install.ps1
 ```
 
-## 🎯 Ejecutar la Aplicación
+##  Ejecutar la Aplicación
 ```powershell
 # Opción 1: Script de ejecución
 .\run_app.ps1
@@ -348,7 +345,7 @@ venv\Scripts\activate
 python Aplicacion\GesturaV4.py
 ```
 
-## 🧪 Probar Módulos Individuales
+##  Probar Módulos Individuales
 
 ### **Probar Speech-to-Text:**
 ```python
@@ -371,7 +368,7 @@ python examples\tracking_event_example.py
 python RedesNeuronales\ProbarModelos.py
 ```
 
-## 🔧 Solución de Problemas Comunes
+##  Solución de Problemas Comunes
 
 ### **Error: MySQL Connection Failed**
 ```bash
@@ -400,7 +397,7 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## 🛠️ Funcionalidades principales:
+##  Funcionalidades principales:
 - **Captura Ultra Leap**: Captura en tiempo real de las posiciones de las articulaciones de las manos.
 - **Reconocimiento MediaPipe**: Detección adicional usando MediaPipe para mayor precisión.
 - **Redes Neuronales**: CNN, LSTM y modelos híbridos para reconocimiento de gestos.
@@ -409,7 +406,7 @@ pip install -r requirements.txt
 - **Base de datos**: Sistema de usuarios con MySQL.
 - **Inteligencia artificial**: Integración con Google Gemini AI.
 
-## 🔧 Tecnologías utilizadas:
+##  Tecnologías utilizadas:
 - **Python 3.8+**: Lenguaje principal del proyecto
 - **PyQt6**: Interfaz gráfica de usuario moderna
 - **TensorFlow/Keras**: Redes neuronales para predicción de gestos  
@@ -422,7 +419,7 @@ pip install -r requirements.txt
 - **Google Cloud**: Speech-to-Text y Gemini AI
 - **Pandas/NumPy**: Procesamiento de datos
 
-## 📂 Estructura del Proyecto:
+##  Estructura del Proyecto:
 ```
 GesturaApp/
 ├── Aplicacion/           # Aplicación principal
@@ -444,7 +441,7 @@ GesturaApp/
 └── install.ps1       # Script de instalación automática
 ```
 
-## 🎯 Uso de la Aplicación:
+##  Uso de la Aplicación:
 1. **Conecta** la cámara Ultra Leap a tu computadora
 2. **Ejecuta** la aplicación con `.\run_app.ps1`
 3. **Inicia sesión** o crea una cuenta nueva
@@ -452,7 +449,7 @@ GesturaApp/
 5. **Observa** las predicciones en tiempo real
 6. **Usa** la transcripción de voz para comandos adicionales
 
-## 🤝 Contribuir:
+##  Contribuir:
 GesturaApp es un proyecto de inclusión tecnológica. Las contribuciones son bienvenidas para mejorar la precisión del reconocimiento y agregar nuevas funcionalidades.
 
 ## 📄 Licencia:
