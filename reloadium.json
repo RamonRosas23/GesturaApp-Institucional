@@ -1,0 +1,14 @@
+{
+    "hot_reload": true,
+    "watch_paths": [
+        "./Aplicacion",
+        "./Login",
+        "./RedesNeuronales"
+    ],
+    "exclude_paths": [
+        "./__pycache__",
+        "./venv",
+        "./assets"
+    ],
+    "log_level": "info"
+}

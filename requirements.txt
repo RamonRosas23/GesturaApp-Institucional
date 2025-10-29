@@ -1,0 +1,59 @@
+# Build and development tools
+build
+cffi
+setuptools
+wheel
+
+# Computer Vision and Image Processing
+opencv-python
+mediapipe
+
+# Deep Learning and Machine Learning
+tensorflow
+keras
+scikit-learn
+pandas
+numpy
+matplotlib
+seaborn
+joblib
+
+# GUI Framework - PyQt6
+PyQt6
+PyQt6-sip
+PyQt6-WebEngine
+
+# Web Framework - Flask
+Flask
+Flask-Mail
+itsdangerous
+requests
+requests-oauthlib
+
+# Database
+mysql-connector-python
+
+# Audio Processing
+pyaudio
+pyttsx3
+
+# Google Cloud Services
+google-cloud-speech
+google-generativeai
+
+# Environment and Configuration
+python-dotenv
+
+# UI Styling and Icons
+pywinstyles
+qtawesome
+
+# Payment Processing
+stripe
+
+# Utilities
+six
+
+# Additional dependencies for compatibility
+Pillow
+urllib3

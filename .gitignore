@@ -1,0 +1,280 @@
+# ========================================
+# Python
+# ========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ========================================
+# Virtual Environments
+# ========================================
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ========================================
+# IDEs and Editors
+# ========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# ========================================
+# Operating System Files
+# ========================================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ========================================
+# Logs and Databases
+# ========================================
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+logs/
+log/
+
+# ========================================
+# Machine Learning Models (Large Files)
+# ========================================
+# Keras models (only in RedesNeuronalesV2, keep RedesNeuronales)
+# *.h5
+# *.hdf5
+# *.keras  <- Commented out to keep RedesNeuronales models
+
+# Scikit-learn models (only in RedesNeuronalesV2, keep RedesNeuronales)
+# *.pkl
+# *.pickle
+# *.skl    <- Commented out to keep RedesNeuronales models
+
+# Model copies and backups (everywhere)
+*copy.keras
+*copy.skl
+*copy.pkl
+
+# TensorFlow
+*.pb
+saved_model/
+checkpoints/
+*.ckpt*
+*.meta
+*.index
+
+# ========================================
+# Data Files
+# ========================================
+# CSV data files (except essential ones)
+*.csv
+!label_mapping.csv
+!gesture_labels.csv
+
+# Large data directories
+data/
+datasets/
+raw_data/
+processed_data/
+
+# ========================================
+# Media Files
+# ========================================
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.wmv
+*.flv
+*.webm
+*.mp3
+*.wav
+*.flac
+*.aac
+*.ogg
+
+# ========================================
+# Configuration and Secrets
+# ========================================
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# API keys and credentials
+*credentials*
+*secrets*
+*keys*
+api_key.txt
+config.json
+!config.example.json
+
+# Google Cloud credentials
+credentials/
+*service-account*.json
+*credentials*.json
+teak-inquiry-*.json
+
+# ========================================
+# Leap Motion Build Files
+# ========================================
+leapc-python-api/build/
+leapc-python-api/dist/
+leapc-python-api/src/leap.egg-info/
+
+leapc-cffi/build/
+leapc-cffi/dist/
+leapc-cffi/src/leapc_cffi.egg-info/
+leapc-cffi/src/leapc_cffi/*.h
+leapc-cffi/src/leapc_cffi/*.dll
+leapc-cffi/src/leapc_cffi/*.pyd
+leapc-cffi/src/leapc_cffi/*.lib
+leapc-cffi/src/leapc_cffi/*.dylib
+leapc-cffi/src/leapc_cffi/*.so
+
+# ========================================
+# Testing
+# ========================================
+.coverage
+.pytest_cache/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+nosetests.xml
+coverage/
+htmlcov/
+
+# ========================================
+# Documentation
+# ========================================
+docs/_build/
+.sphinx/
+
+# ========================================
+# Package managers
+# ========================================
+# npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ========================================
+# Temporary files
+# ========================================
+*.tmp
+*.temp
+temp/
+tmp/
+
+# ========================================
+# Cache directories
+# ========================================
+.cache/
+.parcel-cache/
+
+# ========================================
+# Project specific
+# ========================================
+# Gesture recognition models in RedesNeuronalesV2 (too large for git)
+RedesNeuronalesV2/*.keras
+RedesNeuronalesV2/*.skl
+RedesNeuronalesV2/*copy*
+
+# Keep ALL models in RedesNeuronales folder (original models)
+# !RedesNeuronales/*.keras  <- This line is commented out to keep models
+# !RedesNeuronales/*.skl    <- This line is commented out to keep models
+
+# Keep essential mapping files
+!RedesNeuronales/label_mapping.json
+!RedesNeuronalesV2/label_mapping.json
+
+# Video recordings and captures
+recordings/
+captures/
+videos/
+
+# User uploads
+uploads/
+user_data/
+
+# Backup files
+*.backup
+backup/
+backups/
+
+# Performance profiling
+*.prof
+profile_results/

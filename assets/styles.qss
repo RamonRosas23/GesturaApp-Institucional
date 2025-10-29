@@ -1,0 +1,179 @@
+/* styles.qss */
+
+/* ======================== */
+/* GLOBAL STYLES */
+/* ======================== */
+QWidget {
+    font-family: 'Manrope', 'Noto Sans', sans-serif;
+    background-color: #0F172A; /* Fondo global */
+    color: white;
+}
+
+QLabel {
+    font-size: 14px;
+    color: white;
+}
+
+QPushButton {
+    background-color: #1E3A5F;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+QPushButton:hover {
+    background-color: #2A496E;
+}
+
+QPushButton:pressed {
+    background-color: #122640;
+}
+
+QLineEdit {
+    background-color: #2A3A53;
+    color: white;
+    border: 1px solid #4B6E85;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+QProgressBar {
+    background-color: #2b2b2b;
+    border: 1px solid #1e2d3a;
+    height: 5px;
+}
+
+QProgressBar::chunk {
+    background-color: #19a2e6;
+}
+
+/* ======================== */
+/* HEADER SECTION */
+/* ======================== */
+#header_frame {
+    background-color: #111c22;
+}
+
+#header_logo {
+    background-color: transparent;
+}
+
+QPushButton#nav_link {
+    font-size: 14px;
+    color: white;
+    background-color: transparent;
+    font-weight: 500;
+}
+
+QPushButton#nav_link:hover {
+    color: #9dd6ff;
+}
+
+/* ======================== */
+/* VIDEO CONTAINER */
+/* ======================== */
+#video_container {
+    background-color: black;
+    border-radius: 10px;
+}
+
+#camera_status_label {
+    margin: 10px;
+}
+
+/* ======================== */
+/* PREDICTION SECTION */
+/* ======================== */
+#prediction_container {
+    background-color: #2E3B4E;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+#translation_label {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+QTextEdit#prediction_label {
+    background-color: #2E3B4E;
+    color: #B0BEC5;
+    font-size: 28px;
+    border: none;
+}
+
+#prediction_button {
+    background-color: #1E3A5F;
+    border-radius: 8px;
+}
+
+/* ======================== */
+/* SIDEBAR SECTION */
+/* ======================== */
+#sidebar_widget {
+    background-color: #243b47;
+    border-radius: 20px;
+}
+
+#voice_button {
+    background-color: #1E3A5F;
+    border-radius: 22px;
+}
+
+#box_title_label {
+    color: white;
+    font-weight: bold;
+}
+
+#box_description_label {
+    color: #93b6c8;
+}
+
+/* ======================== */
+/* PROFILE SECTION */
+/* ======================== */
+#profile_widget {
+    background-color: #1E293B;
+    border-radius: 20px;
+}
+
+#edit_button {
+    background-color: #1E3A5F;
+    border-radius: 10px;
+}
+
+#avatar_label {
+    border-radius: 50%;
+}
+
+/* ======================== */
+/* SETTINGS PAGE */
+/* ======================== */
+#settings_widget {
+    background-color: #1E3A5F;
+}
+
+#settings_title {
+    font-size: 24px;
+    color: #555555;
+}
+
+#settings_model_selector {
+    background-color: #2A3A53;
+    color: white;
+    border-radius: 5px;
+}
+
+/* ======================== */
+/* BUTTONS */
+/* ======================== */
+#narrar_button, #save_button, #logout_button, #confirm_button {
+    background-color: #1E3A5F;
+    border-radius: 8px;
+}
+
+#narrar_button:hover, #save_button:hover, #logout_button:hover, #confirm_button:hover {
+    background-color: #2A496E;
+}
