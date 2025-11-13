@@ -545,14 +545,16 @@ class TutorialWidget(QWidget):
         container_wrapper.addStretch()
         layout.addLayout(container_wrapper)
 
-        video_path = os.path.join(media_root, f"{sign_name}.mp4")
-        images_dir = os.path.join(media_root, sign_name, "images")
-        if os.path.isfile(video_path):
+        # Verificar si existe la carpeta media_root
+        video_path = os.path.join(media_root, f"{sign_name}.mp4") if os.path.exists(media_root) else None
+        images_dir = os.path.join(media_root, sign_name, "images") if os.path.exists(media_root) else None
+        
+        if video_path and os.path.isfile(video_path):
             self.cap = cv2.VideoCapture(video_path)
             self.timer = QTimer(self)
             self.timer.timeout.connect(self.next_frame)
             self.timer.start(int(1000/120))  # 120 FPS para máxima fluidez
-        elif os.path.isdir(images_dir):
+        elif images_dir and os.path.isdir(images_dir):
             self.image_paths = sorted([os.path.join(images_dir, f) for f in os.listdir(images_dir) if f.lower().endswith(('png','jpg'))])
             self.idx = 0
             self.show_image(0)
@@ -565,7 +567,7 @@ class TutorialWidget(QWidget):
             btns.addWidget(nxt)
             layout.addLayout(btns)
         else:
-            self.video_label.setText("<span style='color:#ff6b6b'>(No tutorial disponible)</span>")
+            self.video_label.setText("<span style='color:#ff6b6b'>(No hay tutorial disponible para esta seña)</span>")
         
         self.practice_btn = QPushButton("Practicar seña")
         self.practice_btn.clicked.connect(self.go_practice)

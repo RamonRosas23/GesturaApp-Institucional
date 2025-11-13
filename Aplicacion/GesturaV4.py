@@ -1492,12 +1492,9 @@ class GesturaApp(QWidget):
 
         def check_resources():
             errors = []
-            if not os.path.exists(media_root):
-                errors.append("No se encontró la carpeta de tutoriales.")
+            # Solo validar el modelo de red neuronal (los tutoriales son opcionales)
             if not os.path.exists(model_path):
                 errors.append("No se encontró el modelo de red neuronal.")
-            if os.path.exists(media_root) and not os.listdir(media_root):
-                errors.append("La carpeta de tutoriales está vacía.")
             return errors
 
         def show_error(error_messages):
@@ -1993,9 +1990,19 @@ class GesturaApp(QWidget):
 
         # Avatar
         avatar_label = QLabel()
-        avatar_pixmap = self.user_data["avatar"].scaled(
-            180, 180, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation  # Tamaño aumentado del avatar
-        )
+        # Verificar que el avatar no sea None antes de usarlo
+        if self.user_data["avatar"] is not None:
+            avatar_pixmap = self.user_data["avatar"].scaled(
+                180, 180, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation  # Tamaño aumentado del avatar
+            )
+        else:
+            # Usar un pixmap por defecto si avatar es None
+            default_avatar_path = os.path.join(carpeta_recursos, 'default_avatar.png')
+            if os.path.exists(default_avatar_path):
+                avatar_pixmap = QPixmap(default_avatar_path).scaled(180, 180, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
+            else:
+                avatar_pixmap = QPixmap(180, 180)
+                avatar_pixmap.fill(QColor("#2a496e"))
         rounded_avatar = self.get_rounded_pixmap(avatar_pixmap, 180, 180, 90)
         avatar_label.setPixmap(rounded_avatar)
         avatar_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -2946,6 +2953,15 @@ class GesturaApp(QWidget):
         
     def cargar_gestura_aplicacion(self, user_perfile):
         avatar = self.convertir_avatar(user_perfile['avatar'])
+        # Asegurar que avatar nunca sea None
+        if avatar is None:
+            default_avatar_path = os.path.join(carpeta_recursos, 'default_avatar.png')
+            if os.path.exists(default_avatar_path):
+                avatar = QPixmap(default_avatar_path).scaled(100, 100, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
+            else:
+                # Crear un pixmap simple por defecto
+                avatar = QPixmap(100, 100)
+                avatar.fill(QColor("#2a496e"))
         user_perfile['avatar'] = avatar
         self.user_data = user_perfile
         
@@ -3050,7 +3066,15 @@ class GesturaApp(QWidget):
             raise ValueError("Formato de avatar no soportado.")
         except Exception as e:
             print(f"Error al convertir el avatar: {str(e)}")
-            return None
+            # Retornar un avatar por defecto en lugar de None
+            default_avatar_path = os.path.join(carpeta_recursos, 'default_avatar.png')
+            if os.path.exists(default_avatar_path):
+                return QPixmap(default_avatar_path).scaled(100, 100, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
+            else:
+                # Si no existe el avatar por defecto, crear uno simple
+                default_pixmap = QPixmap(100, 100)
+                default_pixmap.fill(QColor("#2a496e"))
+                return default_pixmap
 
         
         
@@ -3060,8 +3084,17 @@ class GesturaApp(QWidget):
             original_pixmap = source.scaled(width, height, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
         elif isinstance(source, str):  # Asume que es una ruta de archivo
             original_pixmap = QPixmap(source).scaled(width, height, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
+        elif source is None:
+            # Si la fuente es None, usar un pixmap por defecto
+            default_avatar_path = os.path.join(carpeta_recursos, 'default_avatar.png')
+            if os.path.exists(default_avatar_path):
+                original_pixmap = QPixmap(default_avatar_path).scaled(width, height, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
+            else:
+                # Crear un pixmap simple por defecto
+                original_pixmap = QPixmap(width, height)
+                original_pixmap.fill(QColor("#2a496e"))
         else:
-            raise ValueError("La fuente debe ser un QPixmap o una ruta de archivo (str).")
+            raise ValueError("La fuente debe ser un QPixmap, una ruta de archivo (str) o None.")
 
         # Crear una imagen con transparencia
         canvas_width = width + 2 * frame_thickness
